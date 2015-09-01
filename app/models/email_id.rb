@@ -4,4 +4,12 @@ class EmailId < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
+
+
+  alias uid id
+
+  def info
+    {name: email, email: email}
+  end
+
 end
