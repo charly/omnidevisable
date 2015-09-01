@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    %title= "Omnidevisable"
+    = stylesheet_link_tag "application", media: "all"
+    = csrf_meta_tags
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+  %body
+    %header.navbar.navbar-inverse(role="banner")
+      .container
+        .navbar-header
+          = link_to "Home", "/", class: 'navbar-brand'
+        .navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to "secret page", "/secret"
+
+    .container
+      - flash.each do |name, msg|
+        .row
+          .col-md-6.col-md-offset-3
+            = content_tag :div, msg, class: "alert alert-info text-center"
+
+      = yield
+
+    %footer(style="height:60px")
+      .container
+        %hr
+        .row
+          .text-center=link_to "on github", "https://github.com/charly"
+
+    = javascript_include_tag "application"

@@ -1,0 +1,14 @@
+.row
+  %ul.col-md-12
+    - EmailId.all.each do |email|
+      %li
+        = email.email
+        ,
+        = email.confirmed?
+
+.row
+  = link_to "signup", "/email_ids/sign_up"
+  \|
+  = link_to "signin", "/email_ids/sign_in"
+  \|
+  = link_to "logout", destroy_email_id_session_path, method: :delete
