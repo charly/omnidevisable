@@ -20,7 +20,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
 end
 
 group :development do
@@ -32,7 +32,7 @@ group :development do
   gem 'thin'
   gem "quiet_assets"
   gem "pry-rails"
-  # gem "pry-byebug"
+  gem "pry-byebug"
   # gem "pry-stack_explorer"
 end
 
@@ -41,3 +41,5 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem "omniauth"
 gem "devise"
+gem "simple_form"
+gem "virtus"
