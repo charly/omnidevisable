@@ -1,14 +1,39 @@
 .row
-  %ul.col-md-12
+  %ul.col-md-6
     - EmailId.all.each do |email|
       %li
         = email.email
         ,
         = email.confirmed?
+  .col-md-6
+    = simple_form_for(SessionForm.new, url: "/auth/devise/callback") do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :email, required: true, autofocus: true
+        = f.input :password, required: true
+      .form-actions
+        = f.button :submit, "Connection"
+    =# render "devise/shared/links"
 
+
+%hr
+%br
 .row
-  = link_to "signup", "/email_ids/sign_up"
-  \|
-  = link_to "signin", "/email_ids/sign_in"
-  \|
-  = link_to "logout", destroy_email_id_session_path, method: :delete
+
+  .col-md-6
+    %h4 Devise classical Signup
+
+    = link_to "signup", "/email_ids/sign_up"
+    \|
+    = link_to "signin", "/email_ids/sign_in"
+    \|
+    = link_to "logout", destroy_email_id_session_path, method: :delete
+
+  .col-md-6
+    %h4 Omniauth Signup
+
+    = link_to "google", ""
+    \|
+    = link_to "signin", "/email_ids/sign_in"
+    \|
+    = link_to "logout", session_path(id: "current"), method: :delete
