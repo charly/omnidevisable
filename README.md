@@ -6,4 +6,4 @@ Read more about the idea on [my blog post][blog]
 
 
 
-[blog]: ruby/devise/omniauth/2015/09/03/2015-09-03-devise-upside-down.html
+[blog]: http://ruby.simapse.com/ruby/devise/omniauth/2015/09/03/2015-09-03-devise-upside-down.html
